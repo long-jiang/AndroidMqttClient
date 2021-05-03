@@ -1,0 +1,17 @@
+<resources>
+    <string name="app_name">AndroidMqttClient</string>
+    <string name="title_device">设备</string>
+    <string name="default_text">默认文本</string>
+    <string name="todo">TODO</string>
+    <string name="user_name">柠檬树</string>
+    <string name="login_out">退出登录/关闭</string>
+    <string name="login">登录</string>
+    <string name="id">账号/ID</string>
+    <string name="password">密码</string>
+    <string name="forget_the_password">忘记密码</string>
+    <string name="remember_the_password">记住密码</string>
+    <string name="device_name">设备名称:</string>
+    <string name="add_device">添加设备</string>
+    <string name="finish">完成</string>
+
+</resources>
