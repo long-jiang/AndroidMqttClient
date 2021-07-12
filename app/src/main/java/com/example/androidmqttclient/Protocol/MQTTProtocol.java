@@ -3,6 +3,7 @@ package com.example.androidmqttclient.Protocol;
 import android.util.Log;
 
 import com.example.androidmqttclient.Callback.MQTTCallbackBus;
+import com.orhanobut.logger.Logger;
 
 import org.eclipse.paho.client.mqttv3.IMqttMessageListener;
 import org.eclipse.paho.client.mqttv3.MqttCallback;
@@ -13,7 +14,6 @@ import org.eclipse.paho.client.mqttv3.MqttMessage;
 import org.eclipse.paho.client.mqttv3.persist.MqttDefaultFilePersistence;
 
 public class MQTTProtocol {
-    private static final String TAG = "MQTTProtocol";
     private MqttCallback mCallback;
     private static MqttClient client;//客户端
     private MqttConnectOptions conOpt;//连接选项
@@ -42,7 +42,7 @@ public class MQTTProtocol {
                 mInstance = null;
             }
         } catch (Exception e) {
-            Log.e(TAG, "release : " + e.toString());
+            Logger.e("release : " + e.toString());
         }
     }
 
@@ -54,7 +54,7 @@ public class MQTTProtocol {
      * @param id       客户端Id
      */
     public void createConnect(String url, String name, String password, String id, String topic) {
-        Log.d(TAG,"URL= "+url+" name= "+name+" password= "+password+" id= "+id+" topic= "+topic);
+        Logger.d("URL= "+url+" name= "+name+" password= "+password+" id= "+id+" topic= "+topic);
         String tmpDir = System.getProperty("java.io.tmpdir");  // 获取默认的临时文件路径
         //在数据发送过程中 如果客户端没有接收到 数据包会一直保存在文件中，直到成功为止
         assert tmpDir != null;
@@ -77,7 +77,7 @@ public class MQTTProtocol {
             client.setCallback(mCallback); // 设置回调
             connect();
         } catch (MqttException e) {
-            Log.e(TAG, "createConnect : " + e.toString());
+            Logger.e("createConnect : " + e.toString());
         }
     }
 
@@ -86,10 +86,9 @@ public class MQTTProtocol {
         if (client != null) {
             try {
                 client.connect(conOpt);
-                Log.e(TAG, "连接成功 : ");
+                Logger.e("连接成功 : ");
             } catch (Exception e) {
-                //TODO：该错误需通知到外部
-                Log.e(TAG, "doConnect : " + e.toString());
+                Logger.e( "doConnect : " + e.toString());
             }
         }
     }
@@ -110,7 +109,7 @@ public class MQTTProtocol {
             try {
                 client.publish(topicName, message);
             } catch (MqttException e) {
-                Log.e(TAG, "publish : " + e.toString());
+                Logger.e("publish : " + e.toString());
             }
         }
     }
@@ -124,7 +123,7 @@ public class MQTTProtocol {
             try {
                 client.publish(topicName, message);
             } catch (MqttException e) {
-                Log.e(TAG, "publish : " + e.toString());
+                Logger.e("publish : " + e.toString());
             }
         }
     }
@@ -140,7 +139,7 @@ public class MQTTProtocol {
             try {
                 client.subscribe(topicName, qos);
             } catch (MqttException e) {
-                Log.e(TAG, "subscribe : " + e.toString());
+                Logger.e("subscribe : " + e.toString());
             }
         }
     }
@@ -150,7 +149,7 @@ public class MQTTProtocol {
             try {
                 client.subscribe(topicName,qos,messageListener);
             } catch (MqttException e) {
-                Log.e(TAG, "subscribe : " + e.toString());
+                Logger.e("subscribe : " + e.toString());
             }
         }
     }
@@ -165,7 +164,7 @@ public class MQTTProtocol {
             try {
                 client.unsubscribe(topicName);
             } catch (MqttException e) {
-                Log.e(TAG, "subscribe : " + e.toString());
+                Logger.e("subscribe : " + e.toString());
             }
         }
     }

@@ -78,6 +78,7 @@
                     android:autofillHints=""
                     android:background="@drawable/edit_text_style"
                     android:hint="@string/password"
+                    android:inputType="numberPassword"
                     android:paddingStart="15dp"
                     android:paddingLeft="15dp"
                     android:textSize="15sp"
@@ -116,14 +117,34 @@
                     android:textSize="10sp"
                     tools:ignore="SmallSp" />
 
-            <Button
+
+             <TextView
+                    android:id="@+id/button_register"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="#00000000"
+                    android:text="@string/register"
+                    android:textSize="12sp"
+                      android:paddingEnd="4dp"
+                    tools:ignore="SmallSp,UseSwitchCompatOrMaterialXml"
+                     android:paddingRight="4dp" />
+            <LinearLayout
+                    android:layout_width="1dp"
+                    android:layout_height="10dp"
+                    android:background="@color/design_default_color_on_secondary" />
+
+            <TextView
                     android:id="@+id/button_forget_the_password"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:background="#00000000"
                     android:text="@string/forget_the_password"
-                    android:textSize="10sp"
-                    tools:ignore="SmallSp,UseSwitchCompatOrMaterialXml" />
+                    android:textSize="12sp"
+                     android:paddingStart="4dp"
+                    android:paddingEnd="12dp"
+                    tools:ignore="SmallSp,UseSwitchCompatOrMaterialXml"
+                    android:paddingRight="12dp"
+                    android:paddingLeft="4dp" />
 
 
         </LinearLayout>

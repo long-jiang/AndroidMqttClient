@@ -9,6 +9,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import com.example.androidmqttclient.R;
 import com.example.androidmqttclient.Util.StatusBar;
 import com.hwangjr.rxbus.RxBus;
+import com.orhanobut.logger.Logger;
 
 import java.util.Objects;
 
@@ -36,6 +37,7 @@ public abstract class BaseActivity extends AppCompatActivity implements IBaseVie
 
     @Override
     protected void onDestroy() {
+        Logger.d("界面销毁");
         super.onDestroy();
         //RxBus取消订阅
         RxBus.get().unregister(this);

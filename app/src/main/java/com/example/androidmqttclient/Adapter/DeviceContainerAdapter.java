@@ -22,7 +22,6 @@ public class DeviceContainerAdapter extends RecyclerView.Adapter<DeviceContainer
     private DeviceBlockClick deviceBlockClick;
 
     public DeviceContainerAdapter(List<DeviceBean> list, DeviceBlockClick deviceBlockClick) {
-        Log.d("AAAAAAAAAAAAAA","list="+list.size());
         this.mList = list;
         this.deviceBlockClick=deviceBlockClick;
     }
@@ -64,15 +63,14 @@ public class DeviceContainerAdapter extends RecyclerView.Adapter<DeviceContainer
 
     public class ViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
 
-        private ImageView imageView;
-        private TextView textViewDescribe;
-        private TextView textViewDeviceName;
-        private LinearLayout linearLayout_device_block;
+        private final TextView textViewDescribe;
+        private final TextView textViewDeviceName;
+        private final LinearLayout linearLayout_device_block;
 
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
             itemView.setOnClickListener(this);
-            imageView = itemView.findViewById(R.id.imageView);
+            ImageView imageView = itemView.findViewById(R.id.imageView);
             textViewDescribe = itemView.findViewById(R.id.textView_describe);
             textViewDeviceName = itemView.findViewById(R.id.textView_device_name);
             linearLayout_device_block = itemView.findViewById(R.id.linearLayout_device_block);

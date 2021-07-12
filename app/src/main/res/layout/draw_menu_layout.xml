@@ -38,6 +38,7 @@
                     tools:ignore="RtlSymmetry" />
 
             <TextView
+                    android:id="@+id/menu_name"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
