@@ -94,6 +94,8 @@ public class HomepageActivity extends BaseActivity implements View.OnClickListen
         buttonExit.setOnClickListener(this);
         LinearLayout login = homepageBinding.includeDrawMenu.login;
         login.setOnClickListener(this);
+         ButtonExtendM about = homepageBinding.includeDrawMenu.menuAbout;
+        about.setOnClickListener(this);
 
         int height = StatusBar.getStatusBarHeightCompat(this);
         homepageBinding.linearLayoutBar.setBackgroundResource(R.color.colorAccent);
@@ -129,6 +131,9 @@ public class HomepageActivity extends BaseActivity implements View.OnClickListen
         } else if (v.getId() == homepageBinding.includeDrawMenu.login.getId()) {
             Intent intent = new Intent(this, LoginActivity.class)
                     .setFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_NEW_TASK);
+            startActivity(intent);
+        } else if (v == homepageBinding.includeDrawMenu.menuAbout) {
+            Intent intent = new Intent(this, AboutActivity.class);
             startActivity(intent);
         }
     }
