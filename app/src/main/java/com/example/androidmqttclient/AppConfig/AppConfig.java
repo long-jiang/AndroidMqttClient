@@ -11,6 +11,14 @@ package com.example.androidmqttclient.AppConfig;
     public static final String URL = "tcp://121.5.238.148:1883";//M Q T T服务器地址
     public static final String clientId = "android_control_system";//该客服端ID
 
+
+    //联系方式
+    public static final String ContactDetails="邮箱：long_zhengjiang@163.com";
+
+
+    //向服务器发送反馈的信息
+    public static final String FeedBack="android_server_feed_back";
+
     /*  必须订阅server的所有消息
      1、更新
      2、获取用户自己的信息

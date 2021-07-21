@@ -13,6 +13,7 @@
             android:background="@mipmap/return_ico" />
 
     <TextView
+        android:id="@+id/textView_title"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"

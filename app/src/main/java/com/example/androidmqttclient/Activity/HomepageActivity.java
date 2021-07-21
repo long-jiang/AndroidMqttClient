@@ -97,6 +97,9 @@ public class HomepageActivity extends BaseActivity implements View.OnClickListen
          ButtonExtendM about = homepageBinding.includeDrawMenu.menuAbout;
         about.setOnClickListener(this);
 
+        ButtonExtendM FeedBack = homepageBinding.includeDrawMenu.menuFeedback;
+        FeedBack.setOnClickListener(this);
+
         int height = StatusBar.getStatusBarHeightCompat(this);
         homepageBinding.linearLayoutBar.setBackgroundResource(R.color.colorAccent);
         homepageBinding.linearLayoutBar.setMinimumHeight(height);
@@ -110,8 +113,8 @@ public class HomepageActivity extends BaseActivity implements View.OnClickListen
 
         LinearLayoutManager layoutManager = new LinearLayoutManager(this);
         homepageBinding.recyclerDeviceContainer.setLayoutManager(layoutManager);
-
         homepageBinding.recyclerDeviceContainer.setAdapter(new DeviceContainerAdapter(list, this));
+
     }
 
     @Override
@@ -134,6 +137,9 @@ public class HomepageActivity extends BaseActivity implements View.OnClickListen
             startActivity(intent);
         } else if (v == homepageBinding.includeDrawMenu.menuAbout) {
             Intent intent = new Intent(this, AboutActivity.class);
+            startActivity(intent);
+        }else if(v==homepageBinding.includeDrawMenu.menuFeedback){
+            Intent intent = new Intent(this, FeedBackActivity.class);
             startActivity(intent);
         }
     }
