@@ -63,11 +63,11 @@
                 android:id="@+id/textView2"
                 android:layout_width="wrap_content"
                 android:layout_height="20dp"
-
                 android:text="@string/device_name"
                 android:textSize="15sp" />
 
         <EditText
+                android:id="@+id/Edit_device_name"
                 android:layout_width="match_parent"
                 android:layout_height="35dp"
                 android:background="@drawable/edit_text_style"
@@ -77,4 +77,83 @@
                 android:autofillHints="" />
 
     </LinearLayout>
+
+
+    <LinearLayout
+            android:id="@+id/linearLayout13"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="10dp"
+            app:layout_constraintTop_toBottomOf="@+id/linearLayout6"
+            tools:layout_editor_absoluteX="-16dp">
+
+        <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="20dp"
+                android:text="添加方式："
+                android:textSize="15sp"
+                tools:layout_editor_absoluteX="34dp"
+                tools:layout_editor_absoluteY="181dp" />
+
+        <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingTop="10dp">
+
+            <CheckBox
+                    android:id="@+id/checkBox_distribution_network"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="网络配网"
+                    tools:layout_editor_absoluteX="34dp"
+                    tools:layout_editor_absoluteY="236dp" />
+            <TextView
+                    android:layout_width="40dp"
+                    android:layout_height="wrap_content"/>
+
+            <CheckBox
+                    android:id="@+id/checkBox_secret_key"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="生成秘钥"
+                    tools:layout_editor_absoluteX="190dp"
+                    tools:layout_editor_absoluteY="237dp" />
+        </LinearLayout>
+
+    </LinearLayout>
+
+
+    <LinearLayout
+            android:id="@+id/linearLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="10dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/linearLayout13"
+            app:layout_constraintVertical_bias="0.0"
+            tools:ignore="MissingConstraints">
+
+        <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="20dp"
+
+                android:text="设备描述："
+                android:textSize="15sp" />
+
+        <EditText
+                android:id="@+id/Edit_describe"
+                android:layout_width="match_parent"
+                android:layout_height="35dp"
+                android:autofillHints=""
+                android:background="@drawable/edit_text_style"
+                android:paddingStart="10dp"
+                android:paddingLeft="10dp"
+                tools:ignore="LabelFor,RtlSymmetry,TextFields" />
+
+    </LinearLayout>
+
 </androidx.constraintlayout.widget.ConstraintLayout>

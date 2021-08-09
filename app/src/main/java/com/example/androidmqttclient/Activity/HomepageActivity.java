@@ -42,7 +42,7 @@ public class HomepageActivity extends BaseActivity implements View.OnClickListen
     public static final int ADD_DEVICE = 1;
     public static final int LOGIN_ACTIVITY = 2;
 
-    private String menuName="Test";//用户名称
+    private String menuName = "Test";//用户名称
 
     private long lastTime; // 上次点击返回键时间
     private ActivityHomepageBinding homepageBinding;
@@ -94,7 +94,7 @@ public class HomepageActivity extends BaseActivity implements View.OnClickListen
         buttonExit.setOnClickListener(this);
         LinearLayout login = homepageBinding.includeDrawMenu.login;
         login.setOnClickListener(this);
-         ButtonExtendM about = homepageBinding.includeDrawMenu.menuAbout;
+        ButtonExtendM about = homepageBinding.includeDrawMenu.menuAbout;
         about.setOnClickListener(this);
 
         ButtonExtendM FeedBack = homepageBinding.includeDrawMenu.menuFeedback;
@@ -138,7 +138,7 @@ public class HomepageActivity extends BaseActivity implements View.OnClickListen
         } else if (v == homepageBinding.includeDrawMenu.menuAbout) {
             Intent intent = new Intent(this, AboutActivity.class);
             startActivity(intent);
-        }else if(v==homepageBinding.includeDrawMenu.menuFeedback){
+        } else if (v == homepageBinding.includeDrawMenu.menuFeedback) {
             Intent intent = new Intent(this, FeedBackActivity.class);
             startActivity(intent);
         }
@@ -161,9 +161,14 @@ public class HomepageActivity extends BaseActivity implements View.OnClickListen
         super.onActivityResult(requestCode, resultCode, data);
         if (resultCode == RESULT_OK) {
             if (requestCode == ADD_DEVICE) {
-                String deviceId = data.getStringExtra("device_id");
-                Logger.d("device_id=" + deviceId);
+                String deviceId = data.getStringExtra("deviceId");
+                String addMethod = data.getStringExtra("addMethod");
+                String deviceName = data.getStringExtra("deviceName");
+                String deviceDescribe = data.getStringExtra("deviceDescribe");
                 homepageBinding.DrawerLayout.closeDrawer(findViewById(R.id.linearLayout_draw_menu));
+                Logger.d(
+                        "deviceId:" + deviceId + "\naddMethod:" + addMethod + "\ndeviceName:" + deviceName + "\ndeviceDescribe:" + deviceDescribe);
+                //TODO: 创建设备块
             } else if (requestCode == LOGIN_ACTIVITY) {
                 homepageBinding.DrawerLayout.closeDrawer(findViewById(R.id.linearLayout_draw_menu));
                 String position = data.getStringExtra("position");
